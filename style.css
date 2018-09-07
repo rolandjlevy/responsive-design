@@ -31,7 +31,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0;
-  list-style: none; 
+  list-style: none;
 }
 .masthead__controls li {
   padding: 0 1em 0 1em;
@@ -40,7 +40,9 @@ body {
 .content {
   background: coral;
   text-align: center;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .content__nav {
@@ -70,7 +72,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  
+
   body {
   }
   .masthead {
@@ -86,12 +88,45 @@ body {
   .masthead__controls {
     padding: 0;
   }
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .content__nav {
+    flex: 1;
+  }
+
+  .content__body {
+    flex: 2;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+  .footer__notes,
+  .footer__address,
+  .footer__map {
+    flex: 1;
+  }
+
 
 @media (min-width: 960px) {
+  .content {
+    display: flex;
+  }
+  .content__nav {
+    flex: 1;
+  }
+  .content__body {
+    flex: 3;
+  }
   .content__sidebar {
     background: lightsteelblue;
     text-align: center;
     display: block;
+    flex: 2;
   }
 
 }
